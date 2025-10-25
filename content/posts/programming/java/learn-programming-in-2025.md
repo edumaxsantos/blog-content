@@ -1,8 +1,7 @@
 ---
 title: 'Aprenda Programação em 2025'
 date: 2025-09-28T07:16:58.633Z
-description: ''
-updated: 'Como estudar programação em 2025 com Java - Introdução'
+description: 'Como estudar programação em 2025 com Java - Introdução'
 tags:
   - Java
   - Programming
