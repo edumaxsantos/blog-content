@@ -1,4 +1,4 @@
-name: Content Updated
+name: Notify Blog Repo
 
 on:
   push:
@@ -6,8 +6,12 @@ on:
       - master
 
 jobs:
-  content_update:
+  notify:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
-    - run: echo "Content updated, triggering Blog build"
+      - name: Trigger Blog builder
+        uses: peter-evans/repository-dispatch@v2
+        with:
+          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          repository: edumaxsantos/new-blog
+          event-type: content_updated
