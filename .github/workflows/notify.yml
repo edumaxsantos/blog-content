@@ -1,0 +1,13 @@
+name: Content Updated
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  content_update:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - run: echo "Content updated, triggering Blog build"
