@@ -1,7 +1,7 @@
 ---
 title: Construindo seu próprio servidor web em Java - Passo 1
 description: "Desafio de programação para aprendizado na prática. Minha versão construindo um servidor web próprio em Java."
-published: 2024-03-10
+date: 2024-03-10
 tags:
   - Java
 draft: false
