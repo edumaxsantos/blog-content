@@ -1,7 +1,7 @@
 ---
 title: 'Aprenda Programação em 2025'
 date: 2025-09-28T07:16:58.633Z
-updated: 2025-10-26T00:28:00
+updated: 2025-10-26T16:00:00
 description: 'Como estudar programação em 2025 com Java - Introdução'
 tags:
   - Java
@@ -42,6 +42,7 @@ processa os dados.
 - [Unidade de armazenamento](#unidade-de-armazenamento)
 - [Parte lógica](#parte-lógica)
   - [Mas o que é sistema binário?](#mas-o-que-é-sistema-binário)
+  - [Padrão ASCII](#padrão-ascii)
 
 #### Unidade de controle (CU)
 Coordena as outras unidades, definindo quando
@@ -114,8 +115,32 @@ e F equivalente ao 15 decimal. Este sistema é utilizado por representar valores
 com menos símbolos, onde 1111b = F.
 
 A partir desse sistema binário, conseguimos criar sequências de sinais
-e atribuir significados para essas sequẽncias. Atualmente agrupamos 8
+e atribuir significados para essas sequências. Atualmente agrupamos 8
 sinais, chamados de byte.
+
+Alguns exemplos de representação numérica que cabe em um byte.
+
+| binário   | decimal | hexadecimal |
+| --------- | ------- | ----------- |
+| 0000 1001 |   9     |  9          |
+| 0000 1010 |   10    |  A          |
+| 0001 1001 |   25    | 19          |
+| 0001 1010 |   26    | 1A          |
+| 1111 1110 |   254   | FE          |
+| 1111 1111 |   255   | FF          |
+
+As empresas que criam os processadores (por exemplo, Intel e AMD) definem que certos bytes
+possuem significados específicos, criando assim comandos. Isso permite que outras pessoas sejam capazes de criar programas
+utilizando esses comandos. Como é em um nível mais próximo de como funciona o chip, os comandos são 
+direcionados às capacidades do chip, como mover dados de um lado para o outro, fazer operações matemáticas básicas,
+pular de uma parte do código para outro, ler dados de alguma parte da memória.
+
+Quando o processador faz essas manipulações, ele geralmente tem duas opções: manipular dados ou manipular endereços 
+(na verdade tem uma terceira opção, mas não precisamos ver isso agora). Quando tratamos de dados, podemos empregar
+alguns padrões existentes, um deles é o ASCII.
+
+
+#### Padrão ASCII
 
 Um sistema que atribui significados para os bytes é chamado de ASCII,
 Código Padrão Americano para o Intercâmbio de Informação. Possui 128 sinais
@@ -123,14 +148,27 @@ com diferentes categorias.
 
 Alguns exemplos:
 
-| binário   | representação visual |
-| --------- | -------------------- |
-| 0011 0000 | 0                    |
-| 0011 0001 | 1                    |
-| 0100 0001 | A                    |
+| binário   | decimal | representação visual |
+| --------- | ------- | -------------------- |
+| 0011 0000 | 48      | 0                    |
+| 0011 0001 | 49      | 1                    |
+| 0100 0001 | 65      | A                    |
+| 0101 1010 | 90      | Z                    |
+| 0110 0001 | 97      | a                    |
+| 0111 1010 | 122     | z                    |
 
-Além disso, podemos também fazer conversões entre sistemas. Os mais comuns
-são decimal e hexadecimal.
+Quando tratamos de dados em formato texto, é necessário escolher o padrão utilizado para codificar
+o texto (codificação de caracteres, ou character encoding em inglês). Serve para fazer um mapeamento de cada
+caractere ou símbolo do seu texto para um byte, possibilitando o entendimento e representação visual.
+
+Boa parte desses sinais em ASCII não são visíveis, servem apenas para controle e é entendido pela máquina sem
+necessidade de representação visual.
+
+
+#### Conversões entre sistemas numéricos
+
+Como dito anteriormente, existem outros sistemas numéricos com bases diferentes, como o decimal (base 10)
+e o hexadecimal (base 16).
 
 Vamos fazer a conversão de binário para decimal.
 0000 0010 é igual a 2 em decimal. Para cada dígito, fazemos assim:
@@ -168,9 +206,3 @@ Agora um número maior, que é utilizado para representar **A** em ASCII:
 0100 0001 -> 65 (A)
 
 Algo que pode notar é que sempre será um número ímpar se o dígito no índice 0 for 1.
-
-De forma bem superficial, a CPU entende que certos padrões binários representam comandos, e esses comandos
-devem ser processados para então realizar determinada tarefa. É por meio de programação podemos definir tarefas
-que serão convertidas (compiladas) para os comandos que a máquina já conhece e então executadas. Existem linguagens
-que precisam de mais passos até chegar nessa versão compreensível pela máquina e outras linguagens que já estão, 
-de certa forma, mais próximas dos comandos reais.
